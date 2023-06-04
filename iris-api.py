@@ -22,22 +22,22 @@ def load_model():
         return response
 
 @app.post("/predict")
-async def predict(sepal_length: float, sepal_width: float, petal_length:float, petal_width: float):
+async def predict(sepal_length: float, sepal_width: float, petal_length: float, petal_width: float):
     model = load_model()
-    input = [[sepal_length, sepal_width, petal_length, petal_width]]
+    input_data = [sepal_length, sepal_width, petal_length, petal_width]  # Update to a list
 
     try:
-        prediction = model.predict(input)
+        prediction = model.predict([input_data])  # Pass the input data as a list
         result = prediction[0]
         response = {
-            "status":200,
-            "input":[sepal_length, sepal_width, petal_length, petal_width],
-            "message":result
+            "status": 200,
+            "input": input_data,
+            "message": result
         }
     except Exception as e:
         response = {
             "status": 204,
             "message": str(e)
         }
-        
+
     return response
