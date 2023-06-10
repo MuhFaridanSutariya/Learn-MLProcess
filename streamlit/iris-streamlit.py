@@ -1,6 +1,11 @@
 import streamlit as st
 from PIL import Image
 import requests
+import yaml
+
+PATH_CONFIG = "/home/muhfaridansutariya/asistensi_mlprocess/MLProcess/Asistensi/streamlit/config.yaml"
+
+config = yaml.safe_load(open(PATH_CONFIG))
 
 st.set_page_config(
     page_title="Iris Classifier",
@@ -9,7 +14,7 @@ st.set_page_config(
 )
 
 # upload image
-img_path = Image.open('assets/bunga.jpg')
+img_path = Image.open(config['assets']['img'])
 st.image(img_path)
 st.title("IRIS Classifier")
 
@@ -55,7 +60,7 @@ with st.form(key="iris_classifier_form",clear_on_submit=True):
 
         # sending the data to the prediction server
         with st.spinner("Sending data to the prediction server... please wait..."):
-            res = requests.post(f"http://127.0.0.1:8000/predict", json=form_data).json()
+            res = requests.post("{}".format(config['server']['url']), json=form_data).json()
 
         # parse the prediction result
         if res['status'] == 200:

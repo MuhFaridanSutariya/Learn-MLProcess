@@ -1,0 +1,14 @@
+#INITIAL SETTINGS
+experiment_name: fastapi-streamlit
+
+# Model
+model:
+  model_directory: model/knn_model.pkl
+
+# Live Server
+server:
+  url: http://127.0.0.1:8000/predict
+
+# assets
+assets:
+  img: assets/bunga.jpg

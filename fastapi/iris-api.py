@@ -1,6 +1,11 @@
 from fastapi import FastAPI
 import pickle
 import numpy as np
+import yaml
+
+PATH_CONFIG = "config.yaml"
+
+config = yaml.safe_load(open(PATH_CONFIG))
 
 app = FastAPI()
 
@@ -11,7 +16,7 @@ app = FastAPI()
 
 def load_model():
     try:
-        path = open('model/knn_model.pkl', 'rb')
+        path = open('{}'.format(config['model']['model_directory']), 'rb')
         classifier = pickle.load(path)
         return classifier
     except Exception as e:

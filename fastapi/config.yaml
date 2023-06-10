@@ -1,0 +1,6 @@
+#INITIAL SETTINGS
+experiment_name: fastapi
+
+# Model
+model:
+  model_directory: model/knn_model.pkl
