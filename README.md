@@ -1,1 +1,1 @@
-My documentation during the learning End-to-End ML process
+My documentation during the learning End-to-End of ML process
