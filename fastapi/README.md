@@ -28,7 +28,7 @@ You can now access the running application by opening a web browser and navigati
 
 Note: If you want to run the container in the background (detached mode), you can add the `-d` flag to the `docker run` command.
 
-Illustration of architecture
+<b>Illustration of architecture</b>
 
 
 ![image](https://github.com/MuhFaridanSutariya/Learn-MLProcess/assets/88027268/281fc45d-095b-49ad-bfe0-cbd74d50acc4)
