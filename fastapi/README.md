@@ -19,7 +19,7 @@ The build process will start, and Docker will execute the instructions specified
 
 ## Running Fastapi on Docker Image
 ```bash
-docker run -p 8009:8000 pacmann_mlprocess_api uvicorn src.api.main:app --host 0.0.0.0
+docker run -p 8009:8000 example_cicd uvicorn src.api.main:app --host 0.0.0.0
 ```
 
 This command will start a container and bind port 8009 of the host machine to port 8000 of the container. The `uvicorn` command is used to run the specified Python application within the container.
